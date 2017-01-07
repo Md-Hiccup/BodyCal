@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Title</title>
+    <style>
+        body {
+            padding-top: 50px;
+            text-align: center;
+            background-color : #e3e3e3;
+        }
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project Name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right" ng-app="calC">
+            <div class="col-xs-12 col-sm-9">
+                <p class="pull-right visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                </p>
+                <div class="starter-template">
+                    <h1>Online Calculator</h1>
+                    <p class="lead"><br>Calculate your body health diet and convert 1 to another.</p>
+                </div>
+                <div ng-view=""></div>
+            </div>
+            <br>
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                <div class="list-group ">
+                    <a href="#htWt" class="list-group-item">Height & Weight converter</a>
+                    <a href="#bmi" class="list-group-item">Body Mass Index</a>
+                    <a href="#bodyFat" class="list-group-item">Body Fat</a>
+                    <a href="#" class="list-group-item">Link</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        <!-- ------------------------BMI------------------------------------ ->
+    <div class="container" ng-app="bmi">
+        <!--<button type="submit" class="btn btn-info"><a href="./bmi">Calculate BMI</a></button> ->
+            <ul>
+                <li><a href="#bmi">Calculate BMI</a></li>
+            </ul>
+            <br>
+            <div ng-view=""></div>
+    </div>
+<!-- =============================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        <script src="./lib/angular.min.js"></script>
+        <script src="./lib/jquery-1.12.1.min.js"></script>
+        <script src="./lib/bootstrap.min.js"></script>
+        <script src="./lib/angular-route.js"></script>
+        <script src="../js/calC.js"></script>
+</body>
+</html>
