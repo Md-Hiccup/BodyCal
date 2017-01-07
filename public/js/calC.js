@@ -21,7 +21,9 @@ app.config(['$routeProvider', function($routeProvider){
 
 app.controller("bmiCtrl" , function ($scope){
     $scope.active = "active";
-    $scope.bmi = $scope.wt/($scope.ht*$scope.ht);
+    $scope.bmi = function(){
+        return $scope.wt/($scope.ht*$scope.ht);
+    }
 });
 app.controller("htWtCtrl" , function ($scope){
     $scope.active = "active";
@@ -31,7 +33,7 @@ app.controller("bodyFatCtrl" , function($scope){
     $scope.visible = true;
     $scope.bodyFatMale = function(){
         res1 = $scope.wgt * 1.082 + 94.42;
-        res2 = res1 - ($scope.wst *4.15)
+        res2 = res1 - ($scope.wst *4.15);
         res3 = (($scope.wgt - res2)*100)/$scope.wgt;
         return res3;
     };
