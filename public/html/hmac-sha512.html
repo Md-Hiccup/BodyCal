@@ -1,0 +1,72 @@
+<div>
+    <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3">
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button class="btn btn-danger btn-lg " ng-click="withoutKey()">Without Secret Key</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-danger btn-lg " ng-click="withKey()">With Secret Key</button>
+            </div>
+        </div><br>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1" >
+        <div ng-show="visibleKey">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title" align="center">Text to HMAC-SHA512 converter With Secret Key</h1>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Plain Text</label>
+                            <div class="col-sm-8 col-lg-9">
+                                <textarea class="form-control" rows="5" cols="50" ng-model="plantext"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Secret Key</label>
+                            <div class="col-sm-8 col-lg-9">
+                                <input type="text" class="form-control" ng-model="secret">
+                            </div>
+                        </div>
+                        <div class="panel-footer panel-primary " >
+                            <div class="form-group"><br>
+                                <label class="col-sm-2 control-label">Encrypt Text</label>
+                                <div class="col-sm-8 col-lg-9">
+                                    <textarea class="form-control" rows="4" cols="50" ng-model="encrypttext2" disabled></textarea>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" ng-click="executeKey()">Encrypt</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div ng-show="visible">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title" align="center">Text to HMAC-SHA512 converter Without Secret Key</h1>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Plain Text</label>
+                            <div class="col-sm-8 col-lg-9">
+                                <textarea class="form-control" rows="5" cols="50" ng-model="plantext"></textarea>
+                            </div>
+                        </div>
+                        <div class="panel-footer panel-primary " >
+                            <div class="form-group"><br>
+                                <label class="col-sm-2 control-label">Encrypt Text</label>
+                                <div class="col-sm-8 col-lg-9">
+                                    <textarea class="form-control well" rows="3" cols="50" ng-model="encrypttext" disabled></textarea>
+                                </div>
+                                <button class="btn btn-primary" ng-click="execute()">Encrypt</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

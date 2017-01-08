@@ -1,3 +1,4 @@
+var sha512 = require('sha512');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var host = "127.0.0.1";
 var port = "3005";
+
 
 var routes = require('./routes/');
 //var users = require('./routes/users');

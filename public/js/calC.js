@@ -1,7 +1,7 @@
 /**
  * Created by hussain on 2/1/17.
  */
-var app=angular.module("calC" , ['ngRoute']);
+var app=angular.module("calC" , ['ngRoute' ,'angular-md5' ,'angular-hmac-sha512' ,'base64']);
 
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.
@@ -16,7 +16,20 @@ app.config(['$routeProvider', function($routeProvider){
     when("/bodyFat" , {
         templateUrl : "html/bodyFat.html",
         controller : "bodyFatCtrl"
+    }).
+    when("/md5" , {
+        templateUrl: "html/md5.html",
+        controller: "md5Ctrl"
+    }).
+    when("/hmac-sha512" , {
+        templateUrl : "html/hmac-sha512.html",
+        controller : "hmac-sha512Ctrl"
+    }).
+    when("/base64" , {
+        templateUrl : "html/base64.html",
+        controller : "base64Ctrl"
     })
+
 }]);
 
 app.controller("bmiCtrl" , function ($scope){
@@ -27,6 +40,46 @@ app.controller("bmiCtrl" , function ($scope){
 });
 app.controller("htWtCtrl" , function ($scope){
     $scope.active = "active";
+});
+app.controller("md5Ctrl" , function ($scope , md5) {
+    $scope.$watch('md5Text' , function(){
+       $scope.md5Msg = md5.createHash($scope.md5Text || '');
+    });
+});
+app.controller("base64Ctrl" , function ($scope ,$base64) {
+    $scope.encode = function(){
+        $scope.visible = false;
+        $scope.visibleKey = true;
+    };
+    $scope.decode = function(){
+        $scope.visible = true;
+        $scope.visibleKey = false;
+    };
+    $scope.base64Encode = function () {
+        $scope.encoded = $base64.encode($scope.encodeText);
+    };
+    $scope.base64Decode = function () {
+        $scope.decodedText = $base64.decode($scope.decoded);
+    };
+});
+app.controller("hmac-sha512Ctrl" , function ($scope ,$crypthmac) {
+    $scope.withoutKey = function(){
+        $scope.visible = true;
+        $scope.visibleKey = false;
+    };
+    $scope.withKey = function(){
+        $scope.visible = false;
+        $scope.visibleKey = true;
+    };
+    $scope.executeKey = function () {
+        var encrypttext2 = $crypthmac.encrypt($scope.plantext2,$scope.secret);
+        $scope.encrypttext2 = encrypttext2;
+    };
+    $scope.execute = function () {
+        var encrypttext = $crypthmac.encrypt($scope.plantext,"");
+        console.log(encrypttext);
+        $scope.encrypttext = encrypttext;
+    };
 });
 app.controller("bodyFatCtrl" , function($scope){
     var res1=0,res2=0,res3=0,res4=0,res5=0,res6=0,res7=0,res8=0,final=0,lbw=0;
