@@ -1,17 +1,17 @@
-<div>
+<div><!-- body FAt male -->
   <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3">
     <div class="btn-group btn-group-justified">
         <div class="btn-group">
-          <button class="btn btn-success btn-lg ">Male</button>
+          <button class="btn btn-success btn-lg " ng-click="bodyFat1()">Male</button>
         </div>
         <div class="btn-group">
-          <button class="btn btn-success btn-lg ">Female</button>
+          <button class="btn btn-success btn-lg " ng-click="bodyFat2()">Female</button>
         </div>
     </div>
   </div>
-<div class="col-lg-8 col-lg-offset-2" >
-    <div ng-show="visible">
-    <br><br><div class="panel panel-primary">
+    <div class="col-lg-8 col-lg-offset-2" >
+        <div ng-show="visibleMale">
+        <br><br><div class="panel panel-primary">
         <div class="panel-heading">
             <h1 class="panel-title" align="center">Body Fat ( Male )</h1>
         </div>
@@ -31,7 +31,39 @@
 
             <p align="center">Body Fat : <input value="{{ bodyFatMale() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;%</p>
         </div>
+       </div>
+     </div>
+     <div ng-show="visibleFemale">
+         <br><br><div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title" align="center">Body Fat ( Female )</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>Body Weight &nbsp: </th>
+                    <th><input type="number" name="weight" id="weightF" ng-model="wgtf">&nbsp;&nbsp;&ensp; in lbs</th>
+                </tr><tr>
+                <th>Wrist circumference &nbsp: </th>
+                <th><input type="number" name="height" id="wrist" ng-model="wrst">&nbsp;&nbsp;&ensp; in inch</th>
+            </tr><tr>
+                <th>Waist circumference &nbsp: </th>
+                <th><input type="number" name="height" id="waistF" ng-model="wast">&nbsp;&nbsp;&ensp; in inch</th>
+            </tr><tr>
+                <th>Hip circumference &nbsp: </th>
+                <th><input type="number" name="height" id="hip" ng-model="hip">&nbsp;&nbsp;&ensp; in inch</th>
+            </tr><tr>
+                <th>Forearm circumference &nbsp: </th>
+                <th><input type="number" name="height" id="arm" ng-model="arm">&nbsp;&nbsp;&ensp; in inch</th>
+            </tr>
+            </table>
+            <!--  <p align="center"><button type="button" class="btn btn-success" id="bmi">Calculate</button></p> -->
+        </div>
+        <div class="panel-footer panel-primary " >
+
+            <p align="center">Body Fat : <input value="{{ bodyFatFemale() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;%</p>
+        </div>
       </div>
+     </div>
     </div>
- </div>
 </div>

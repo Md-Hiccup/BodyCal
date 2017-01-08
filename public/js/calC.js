@@ -29,16 +29,33 @@ app.controller("htWtCtrl" , function ($scope){
     $scope.active = "active";
 });
 app.controller("bodyFatCtrl" , function($scope){
-    var res1 = 0 , res2 = 0 , res3 = 0;
-    $scope.visible = true;
+    var res1=0,res2=0,res3=0,res4=0,res5=0,res6=0,res7=0,res8=0,final=0,lbw=0;
+    $scope.bodyFat1 = function(){
+        $scope.visibleMale = true;
+        $scope.visibleFemale = false;
+    };
+    $scope.bodyFat2 = function(){
+        $scope.visibleMale = false;
+        $scope.visibleFemale = true;
+    };
     $scope.bodyFatMale = function(){
         res1 = $scope.wgt * 1.082 + 94.42;
-        res2 = res1 - ($scope.wst *4.15);
-        res3 = (($scope.wgt - res2)*100)/$scope.wgt;
-        return res3;
+        lbw = res1 - ($scope.wst *4.15);
+        final = (($scope.wgt - lbw)*100)/$scope.wgt;
+        return final;
     };
     $scope.bodyFatFemale = function(){
-
-    }
-
+        $scope.visible = false;
+        res1 = $scope.wgtf*0.732 + 8.987 ;
+        res2 = $scope.wrst/3.14 ;
+        res3 = $scope.wast*0.157;
+        res4 = $scope.hip*0.249;
+        res5 = $scope.arm*0.434;
+        res6 = res1+res2;
+        res7 = res6 - res3;
+        res8 = res7 - res4;
+        lbw = res5 + res8;
+        final = (($scope.wgtf - lbw)*100)/$scope.wgtf;
+        return final;
+    };
 });
