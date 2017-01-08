@@ -45,7 +45,6 @@ app.controller("bodyFatCtrl" , function($scope){
         return final;
     };
     $scope.bodyFatFemale = function(){
-        $scope.visible = false;
         res1 = $scope.wgtf*0.732 + 8.987 ;
         res2 = $scope.wrst/3.14 ;
         res3 = $scope.wast*0.157;
