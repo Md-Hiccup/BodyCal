@@ -23,16 +23,16 @@
             <table class="table">
                 <tr>
                 <th>Weight &nbsp: </th>
-                <th><input type="number" name="weight" id="weight" ng-model="wgt">&nbsp;&nbsp;&ensp; in lbs</th>
+                <th><input class="input-sm" type="number" name="weight" id="weight" ng-model="wgt">&nbsp;&nbsp;&ensp; in lbs</th>
                 </tr><tr>
                 <th>Waist &nbsp: </th>
-                <th><input type="number" name="height" id="waist" ng-model="wst">&nbsp;&nbsp;&ensp; in inch</th>
+                <th><input class="input-sm" type="number" name="height" id="waist" ng-model="wst">&nbsp;&nbsp;&ensp; in inch</th>
                 </tr>
             </table>
             <!--  <p align="center"><button type="button" class="btn btn-success" id="bmi">Calculate</button></p> -->
         </div>
         <div class="panel-footer panel-primary " >
-            <p align="center">Body Fat : <input value="{{ bodyFatMale() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;%</p>
+            <h4 align="center">Body Fat : <input class="input-lg" value="{{ bodyFatMale() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;%</h4>
         </div>
        </div>
      </div>
@@ -45,25 +45,25 @@
             <table class="table">
                 <tr>
                     <th>Body Weight &nbsp: </th>
-                    <th><input type="number" name="weight" id="weightF" ng-model="wgtf">&nbsp;&nbsp;&ensp; in lbs</th>
+                    <th><input class="input-sm" type="number" name="weight" id="weightF" ng-model="wgtf">&nbsp;&nbsp;&ensp; in lbs</th>
                 </tr><tr>
                 <th>Wrist circumference &nbsp: </th>
-                <th><input type="number" name="height" id="wrist" ng-model="wrst">&nbsp;&nbsp;&ensp; in inch</th>
+                <th><input class="input-sm" type="number" name="height" id="wrist" ng-model="wrst">&nbsp;&nbsp;&ensp; in inch</th>
             </tr><tr>
                 <th>Waist circumference &nbsp: </th>
-                <th><input type="number" name="height" id="waistF" ng-model="wast">&nbsp;&nbsp;&ensp; in inch</th>
+                <th><input class="input-sm" type="number" name="height" id="waistF" ng-model="wast">&nbsp;&nbsp;&ensp; in inch</th>
             </tr><tr>
                 <th>Hip circumference &nbsp: </th>
-                <th><input type="number" name="height" id="hip" ng-model="hip">&nbsp;&nbsp;&ensp; in inch</th>
+                <th><input class="input-sm" type="number" name="height" id="hip" ng-model="hip">&nbsp;&nbsp;&ensp; in inch</th>
             </tr><tr>
                 <th>Forearm circumference &nbsp: </th>
-                <th><input type="number" name="height" id="arm" ng-model="arm">&nbsp;&nbsp;&ensp; in inch</th>
+                <th><input class="input-sm" type="number" name="height" id="arm" ng-model="arm">&nbsp;&nbsp;&ensp; in inch</th>
             </tr>
             </table>
             <!--  <p align="center"><button type="button" class="btn btn-success" id="bmi">Calculate</button></p> -->
         </div>
         <div class="panel-footer panel-primary " >
-            <p align="center">Body Fat : <input value="{{ bodyFatFemale() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;%</p>
+            <h4 align="center">Body Fat : <input class="input-lg" value="{{ bodyFatFemale() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;%</h4>
         </div>
       </div>
      </div>

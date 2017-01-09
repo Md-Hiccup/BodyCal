@@ -24,16 +24,15 @@
                 <table class="table">
                     <tr>
                         <th>Height &nbsp: </th>
-                        <th><input type="number" name="height" id="height" ng-model="ht">&nbsp&nbsp in meter</th>
+                        <th><input class="input-sm" type="number" name="height" id="height" ng-model="ht">&nbsp&nbsp in meter</th>
                     </tr><tr>
                     <th>Weight &nbsp: </th>
-                    <th><input type="number" name="weight" id="weight" ng-model="wt">&nbsp&nbsp in kg</th>
+                    <th><input class="input-sm" type="number" name="weight" id="weight" ng-model="wt">&nbsp&nbsp in kg</th>
                 </tr></table>
                 <!--  <p align="center"><button type="button" class="btn btn-success" id="bmi">Calculate</button></p> -->
             </div>
             <div class="panel-footer panel-primary " >
-
-                <p  align="center">BMI : <input value="{{ bmi() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;kg/m&sup2</p>
+                <h4  align="center">BMI : <input class="input-lg" value="{{ bmi() | number:2}} " size="8" style="padding-left:30px;" disabled>&ensp;kg/m&sup2</h4>
             </div>
         </div><br>
     </div>

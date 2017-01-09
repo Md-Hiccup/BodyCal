@@ -1,7 +1,7 @@
 /**
  * Created by hussain on 2/1/17.
  */
-var app=angular.module("calC" , ['ngRoute' ,'angular-md5' ,'angular-hmac-sha512' ,'base64']);
+var app=angular.module("calC" , ['ngRoute' ,'angular-md5' ,'angular-hmac-sha512' ,'base64','naif.base64']);
 
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.
@@ -51,15 +51,16 @@ app.controller("base64Ctrl" , function ($scope ,$base64) {
         $scope.visible = false;
         $scope.visibleKey = true;
     };
-    $scope.decode = function(){
+    $scope.encodeImg = function(){
         $scope.visible = true;
         $scope.visibleKey = false;
     };
-    $scope.base64Encode = function () {
+    $scope.base64Text = function () {
         $scope.encoded = $base64.encode($scope.encodeText);
     };
-    $scope.base64Decode = function () {
-        $scope.decodedText = $base64.decode($scope.decoded);
+    $scope.base64Img = function () {
+        $scope.img = $scope.myfile.base64;
+        console.log($scope.myfile);
     };
 });
 app.controller("hmac-sha512Ctrl" , function ($scope ,$crypthmac) {

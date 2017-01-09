@@ -6,15 +6,15 @@
         <div class="panel-body">
             <table class="table">
                 <tr>
-                    <th>Height : &ensp;<input type="number" name="height" id="ht" style="width:45%" ng-model="hgt">&nbsp&nbsp in inch</th>
+                    <th>Height : &ensp;<input class="input-sm" type="number" name="height" id="ht" style="width:45%" ng-model="hgt">&nbsp&nbsp in inch</th>
                 </tr><tr>
-                <th>Weight : &ensp;<input type="number" name="weight" id="wt" style="width:45%" ng-model="wgt">&nbsp&nbsp in kg</th>
+                <th>Weight : &ensp;<input class="input-sm" type="number" name="weight" id="wt" style="width:45%" ng-model="wgt">&nbsp&nbsp in kg</th>
             </tr></table>
             <!--  <p align="center"><button type="button" class="btn btn-success" id="bmi">Calculate</button></p> -->
         </div>
         <div class="panel-footer panel-primary " >
-            Height: <input value="{{(hgt)/12| number:2}}" size="5" disabled>&ensp;feet&ensp;&ensp;&ensp;&ensp;
-            Weight: <input value="{{wgt*2.20462 | number:2}}" size="5" disabled>&ensp;lbs
+            Height: <input class="input-sm" value="{{(hgt)/12| number:2}}" size="5" disabled>&ensp;feet&ensp;&ensp;&ensp;&ensp;
+            Weight: <input class="input-sm" value="{{wgt*2.20462 | number:2}}" size="5" disabled>&ensp;lbs
         </div>
     </div>
 </div>
@@ -26,17 +26,17 @@
         <div class="panel-body">
             <table class="table">
                 <tr>
-                    <th>Height :&ensp; <input type="number" id="heightFeet" style="width:45%" ng-model="hFeet">&nbsp;in feet</th>
+                    <th>Height :&ensp; <input class="input-sm" type="number" id="heightFeet" style="width:45%" ng-model="hFeet">&nbsp;in feet</th>
                     <!--      <th><input type="number" id="heightMeter" style="width:45%" ng-model="hInch">&nbsp; inch</th>-->
                 </tr><tr>
-                <th>Weight :&ensp; <input type="number" id="weightPound" style="width:45%" ng-model="wLbs">&nbsp;in lbs
+                <th>Weight :&ensp; <input class="input-sm" type="number" id="weightPound" style="width:45%" ng-model="wLbs">&nbsp;in lbs
             </tr>
             </table>
             <!--   <p align="center"><button type="button" class="btn btn-success" id="calc">Calculate</button></p> -->
         </div>
         <div class="panel-footer panel-primary ">
-            Height : <input value="{{(hFeet*0.3048) | number:2}}" size="4" disabled>&ensp;meter&ensp;&ensp;&ensp;&ensp;
-            Weight : <input value="{{(wLbs*0.453592) | number:2}}" size="4" disabled>&ensp;kg
+            Height : <input class="input-sm" value="{{(hFeet*0.3048) | number:2}}" size="4" disabled>&ensp;meter&ensp;&ensp;&ensp;&ensp;
+            Weight : <input class="input-sm" value="{{(wLbs*0.453592) | number:2}}" size="4" disabled>&ensp;kg
         </div>
     </div>
 </div>
