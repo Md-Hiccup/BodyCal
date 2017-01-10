@@ -28,8 +28,11 @@ app.config(['$routeProvider', function($routeProvider){
     when("/base64" , {
         templateUrl : "html/base64.html",
         controller : "base64Ctrl"
+    }).
+    when("/base64Decoder" , {
+        templateUrl : "html/base64Decoder.html",
+        controller : "base64DecoderCtrl"
     })
-
 }]);
 
 app.controller("bmiCtrl" , function ($scope){
@@ -59,8 +62,28 @@ app.controller("base64Ctrl" , function ($scope ,$base64) {
         $scope.encoded = $base64.encode($scope.encodeText);
     };
     $scope.base64Img = function () {
-        $scope.img = $scope.myfile.base64;
+        var img = $scope.myfile.base64;
+        $scope.img = img ;
         console.log($scope.myfile);
+    };
+});
+app.controller("base64DecoderCtrl" , function($scope , $base64){
+    $scope.decoder = function(){
+        $scope.visibleKey = true ;
+        $scope.visible = false ;
+    };
+    $scope.decodeImg = function () {
+        $scope.visibleKey = false ;
+        $scope.visible = true ;
+    };
+    $scope.decodeBase64Img = function () {
+        var imgCode = $scope.imageCode;
+        $scope.imgDecode = imgCode;
+    };
+    $scope.decodeBase64 = function () {
+       var code = $base64.decode($scope.decodeBase);
+        $scope.decoded = code;
+        console.log(code);
     };
 });
 app.controller("hmac-sha512Ctrl" , function ($scope ,$crypthmac) {
